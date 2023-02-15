@@ -5,6 +5,10 @@ import 'package:getx_mvvm/res/assets/image_assets.dart';
 
 import 'package:getx_mvvm/utils/utils.dart';
 
+import '../res/components/general_exception.dart';
+import '../res/components/internet_exceptions_widget.dart';
+import '../res/components/round_button.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -19,6 +23,11 @@ class _SplashScreenState extends State<SplashScreen> {
       appBar: AppBar(
 
         title: Text('email_hint'.tr),
+      ),
+      body: Column(
+        children: [
+
+        ],
       ),
     );
   }
