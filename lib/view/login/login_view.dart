@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:getx_mvvm/data/response/api_response.dart';
 import 'package:getx_mvvm/res/components/round_button.dart';
 import 'package:getx_mvvm/utils/utils.dart';
-import 'package:getx_mvvm/view/login/input_email_wdiget.dart';
-import 'package:getx_mvvm/view/login/input_password_widget.dart';
+import 'package:getx_mvvm/view/login/widgets/input_email_widget.dart';
+import 'package:getx_mvvm/view/login/widgets/input_password_widget.dart';
+import 'package:getx_mvvm/view/login/widgets/login_button_widget.dart';
 import 'package:getx_mvvm/view_models/controller/login/login_view_model.dart';
 
 import '../../data/response/status.dart';
@@ -22,6 +23,14 @@ class _LoginViewState extends State<LoginView> {
 
   final loginVM = Get.put(LoginViewModel()) ;
   final _formkey = GlobalKey<FormState>();
+
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    Get.delete<LoginViewModel>();
+    super.dispose();
+  }
 
 
   @override
@@ -51,16 +60,7 @@ class _LoginViewState extends State<LoginView> {
             ),
 
             const SizedBox(height: 40,),
-            Obx(() => RoundButton(
-                width: 200,
-                title: 'login'.tr,
-                loading: loginVM.loading.value,
-                onPress: (){
-                  if(_formkey.currentState!.validate()){
-                    loginVM.loginApi();
-                  }
-                }
-            ))
+            LoginButtonWidget(formKey: _formkey,)
           ],
         ),
       ),

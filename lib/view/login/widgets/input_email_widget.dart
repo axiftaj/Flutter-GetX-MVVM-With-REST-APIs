@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_mvvm/view_models/controller/login/login_view_model.dart';
 
-import '../../utils/utils.dart';
+import '../../../utils/utils.dart';
+import '../../../view_models/controller/login/login_view_model.dart';
 
 class InputEmailWidget extends StatelessWidget {
    InputEmailWidget({Key? key}) : super(key: key);
 
-  final loginVM = Get.put(LoginViewModel());
+  final loginVM = Get.put(LoginViewModel()) ;
 
   @override
   Widget build(BuildContext context) {
