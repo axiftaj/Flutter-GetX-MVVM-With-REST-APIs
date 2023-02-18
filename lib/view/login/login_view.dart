@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx_mvvm/data/response/api_response.dart';
 import 'package:getx_mvvm/res/components/round_button.dart';
 import 'package:getx_mvvm/utils/utils.dart';
-import 'package:getx_mvvm/view_models/controller/login_view_model.dart';
+import 'package:getx_mvvm/view_models/controller/login/login_view_model.dart';
 
 import '../../data/response/status.dart';
 
