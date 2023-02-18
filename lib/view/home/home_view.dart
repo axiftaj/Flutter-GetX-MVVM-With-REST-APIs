@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_mvvm/data/response/status.dart';
 import 'package:getx_mvvm/res/routes/routes_name.dart';
+import 'package:getx_mvvm/view_models/controller/home/home_view_model.dart';
 import 'package:getx_mvvm/view_models/controller/user_preference/user_prefrence_view_model.dart';
 
 class HomeView extends StatefulWidget {
@@ -14,7 +16,15 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
 
+  final homeVM = Get.put(HomeViewModel());
   UserPreference userPreference = UserPreference();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    homeVM.userListApi();
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -24,9 +34,22 @@ class _HomeViewState extends State<HomeView> {
             userPreference.removeUser().then((value){
               Get.toNamed(RouteName.loginView);
             });
-          }, icon: Icon(Icons.logout))
+          }, icon: const Icon(Icons.logout))
         ],
       ),
+      body: Obx((){
+        print(homeVM.userList.toString());
+        switch(homeVM.rxRequestStatus.value){
+          case  Status.LOADING:
+            return CircularProgressIndicator();
+          case Status.ERROR:
+            return Text('error');
+          case Status.COMPLETED:
+            return Text('asiftaj');
+        }
+        return SizedBox();
+
+      }),
     );
   }
 }

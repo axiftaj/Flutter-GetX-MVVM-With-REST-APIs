@@ -30,6 +30,7 @@ class NetworkApiServices extends BaseApiServices {
       throw RequestTimeOut('');
 
     }
+    print(responseJson);
     return responseJson ;
 
   }
