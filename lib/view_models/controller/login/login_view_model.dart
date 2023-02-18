@@ -28,22 +28,27 @@ class LoginViewModel extends GetxController {
     };
     _api.loginApi(data).then((value){
       loading.value = false ;
+
       if(value['error'] == 'user not found'){
         Utils.snackBar('Login', value['error']);
       }else {
 
         UserModel userModel = UserModel(
-          token: value['token'] ,
+            token: value['token'] ,
           isLogin: true
         );
 
         userPreference.saveUser(userModel).then((value){
-          Get.toNamed(RouteName.homeView);
+
+          Get.delete<LoginViewModel>();
+          Get.toNamed(RouteName.homeView)!.then((value){});
+
+          Utils.snackBar('Login', 'Login successfully');
+
         }).onError((error, stackTrace){
 
         });
 
-        Utils.snackBar('Login', 'Login successfully');
       }
     }).onError((error, stackTrace){
       loading.value = false ;

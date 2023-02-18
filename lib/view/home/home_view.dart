@@ -49,11 +49,11 @@ class _HomeViewState extends State<HomeView> {
           case Status.ERROR:
             if(homeController.error.value =='No internet'){
               return InterNetExceptionWidget(onPress: () {
-                homeController.userListApi();
+                homeController.refreshApi();
               },);
             }else {
               return GeneralExceptionWidget(onPress: (){
-                homeController.userListApi();
+                homeController.refreshApi();
               });
             }
           case Status.COMPLETED:

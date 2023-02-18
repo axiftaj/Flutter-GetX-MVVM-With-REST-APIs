@@ -25,13 +25,6 @@ class _LoginViewState extends State<LoginView> {
   final _formkey = GlobalKey<FormState>();
 
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    Get.delete<LoginViewModel>();
-    super.dispose();
-  }
-
 
   @override
   Widget build(BuildContext context) {
