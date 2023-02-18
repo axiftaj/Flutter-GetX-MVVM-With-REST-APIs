@@ -2,7 +2,7 @@ class UserListModel {
   int? page;
   int? perPage;
   int? total;
-  int? totalPages;
+  String? totalPages;
   List<Data>? data;
   Support? support;
 
