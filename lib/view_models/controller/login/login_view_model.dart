@@ -20,6 +20,7 @@ class LoginViewModel extends GetxController {
 
   RxBool loading = false.obs;
 
+
   void loginApi(){
     loading.value = true ;
     Map data = {
