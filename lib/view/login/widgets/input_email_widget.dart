@@ -21,13 +21,14 @@ class InputEmailWidget extends StatelessWidget {
         if(value!.isEmpty){
           Utils.snackBar('Email', 'Enter email');
         }
+        return null;
       },
       onFieldSubmitted: (value){
         Utils.fieldFocusChange(context, loginVM.emailFocusNode.value, loginVM.passwordFocusNode.value);
       },
       decoration: InputDecoration(
           hintText: 'email_hint'.tr,
-          border: OutlineInputBorder()
+          border: const OutlineInputBorder()
       ),
     );
   }

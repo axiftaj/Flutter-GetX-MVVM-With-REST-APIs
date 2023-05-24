@@ -1,6 +1,7 @@
 
 
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -30,7 +31,7 @@ class NetworkApiServices extends BaseApiServices {
       throw RequestTimeOut('');
 
     }
-    print(responseJson);
+    log(responseJson);
     return responseJson ;
 
   }
@@ -74,7 +75,7 @@ class NetworkApiServices extends BaseApiServices {
         return responseJson ;
 
       default :
-        throw FetchDataException('Error accoured while communicating with server '+response.statusCode.toString()) ;
+        throw FetchDataException('Error accoured while communicating with server ${response.statusCode}') ;
     }
   }
 

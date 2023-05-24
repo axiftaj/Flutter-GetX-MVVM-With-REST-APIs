@@ -21,13 +21,14 @@ class InputPasswordWidget extends StatelessWidget {
         if(value!.isEmpty){
           Utils.snackBar('Password', 'Enter password');
         }
+        return null;
       },
       onFieldSubmitted: (value){
 
       },
       decoration: InputDecoration(
           hintText: 'password_hint'.tr,
-          border: OutlineInputBorder()
+          border: const OutlineInputBorder()
       ),
     );
   }
