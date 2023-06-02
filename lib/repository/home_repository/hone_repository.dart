@@ -1,6 +1,5 @@
 
 
-import 'dart:ui';
 
 import 'package:getx_mvvm/data/network/network_api_services.dart';
 import 'package:getx_mvvm/models/home/user_list_model.dart';

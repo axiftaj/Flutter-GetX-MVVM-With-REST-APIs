@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^2.0.17
   http: ^0.13.5
   fluttertoast: ^8.1.2
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:

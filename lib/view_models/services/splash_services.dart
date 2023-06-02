@@ -1,6 +1,7 @@
 
 
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:getx_mvvm/res/routes/routes_name.dart';
@@ -15,8 +16,8 @@ class SplashServices {
 
     userPreference.getUser().then((value){
 
-      print(value.token);
-      print(value.isLogin);
+      log(value.token.toString());
+      log(value.isLogin.toString());
 
       if(value.isLogin == false || value.isLogin.toString() == 'null'){
         Timer(const Duration(seconds: 3) ,
